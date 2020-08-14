@@ -24,6 +24,8 @@ hook.Add("TTT2ModifyMainMenu", "ttt2_admin_commands", function(helpData)
 end)
 
 hook.Add("TTT2ModifySubMenu", "ttt2_admin_commands_sub", function(helpData, id)
+	if id ~= "menu_admin_commands" then return end
+
 	local subMenuBots = helpData:PopulateSubMenu(id .. "_bots")
 
 	subMenuBots:SetTitle("submenu_admin_commands_bots_title")
